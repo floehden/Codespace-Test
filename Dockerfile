@@ -72,4 +72,4 @@ COPY ./.devcontainer/postCreate.sh /home/vscode/postCreate.sh
 RUN ["chmod", "+x", "/home/vscode/postCreate.sh"]
 
 USER vscode
-WORKDIR /home/vscode
+WORKDIR /home/vscode/workspace
