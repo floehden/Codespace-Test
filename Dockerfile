@@ -52,6 +52,8 @@ USER vscode
 # Copy dclab script used to run the local containerlab build after `make build`
 COPY ./.devcontainer/dclab /usr/local/bin/dclab
 
+COPY ./cEOS64-lab-4.34.2.1F.tar.xz /home/vscode
+
 # Create SSH key for vscode user to enable passwordless SSH to devices
 RUN ssh-keygen -t ecdsa -b 256 -N "" -f ~/.ssh/id_ecdsa
 
@@ -61,7 +63,12 @@ COPY --from=ghcr.io/astral-sh/uv:0.6.2 /uv /uvx /bin/
 # Add empty docker config files to avoid clab warnings for vscode user
 RUN mkdir -p /home/vscode/.docker && echo "{}" > /home/vscode/.docker/config.json
 
+USER root
+COPY ./.devcontainer/install.sh /tmp/install.sh
+RUN ["chmod", "+x", "/tmp/install.sh"]
+RUN /tmp/install.sh && rm /tmp/install.sh
 
+USER vscode
 WORKDIR /home/vscode
 # COPY ./.devcontainer/.zshrc /home/vscode/.zshrc
 # COPY ./.devcontainer/.p10k.zsh /home/vscode/.p10k.zsh

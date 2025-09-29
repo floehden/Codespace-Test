@@ -1,16 +1,17 @@
 {
-    "build": {
-        "dockerfile": "../Dockerfile",
-        "context": "..",
-        "args": { 
-            "CLAB_VERSION": "0.70.2"
-        }
-    },
+    //"build": {
+    //    "dockerfile": "../Dockerfile",
+    //    "context": "..",
+    //    "args": { 
+    //        "CLAB_VERSION": "0.70.2"
+    //    }
+    //},
+    "name": "NetAutoberfest",
+    "image": "floehden/netautoberfest:0.1",
     "features": {
          "ghcr.io/devcontainers/features/docker-in-docker:2": {
             "version": "26.1.5",
-            "dockerDashComposeVersion": "none",
-            "installDockerComposeSwitch": "false"
+            "dockerDashComposeVersion": "none"
         },
         // Add sshd to support gh cli codespace cp.
         "ghcr.io/devcontainers/features/sshd:1": {
@@ -23,10 +24,10 @@
     "remoteUser": "vscode",
     "customizations": {
         "vscode": {
-            "settings": {
+           "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",
                 "terminal.integrated.profiles.linux": {
-                    "zsh": {
+                    "zsh": { 
                         "path": "/bin/zsh"
                     }
                 },
@@ -54,5 +55,6 @@
             ]
         }
     },
-    "workspaceFolder": "/hime/vscode"
+    "postCreateCommand": "bash /.devcontainer/postCreate.sh",
+    "workspaceFolder": "/home/vscode"
 }
