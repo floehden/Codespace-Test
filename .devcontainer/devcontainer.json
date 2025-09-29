@@ -33,5 +33,5 @@
         }
     },
     "postCreateCommand": "bash /home/vscode/postCreate.sh",
-    "workspaceFolder": "/home/vscode"
+    "workspaceFolder": "/home/vscode/workspace"
 }
