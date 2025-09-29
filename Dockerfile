@@ -68,8 +68,8 @@ COPY ./.devcontainer/install.sh /tmp/install.sh
 RUN ["chmod", "+x", "/tmp/install.sh"]
 RUN /tmp/install.sh && rm /tmp/install.sh
 
-COPY ./.devcontainer/postCreate.sh /root/postCreate.sh
-RUN ["chmod", "+x", "/root/postCreate.sh"]
+COPY ./.devcontainer/postCreate.sh /home/vscode/postCreate.sh
+RUN ["chmod", "+x", "/home/vscode/postCreate.sh"]
 
 USER vscode
 WORKDIR /home/vscode
