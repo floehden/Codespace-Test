@@ -1,13 +1,6 @@
 {
-    //"build": {
-    //    "dockerfile": "../Dockerfile",
-    //    "context": "..",
-    //    "args": { 
-    //        "CLAB_VERSION": "0.70.2"
-    //    }
-    //},
     "name": "NetAutoberfest",
-    "image": "ghcr.io/floehden/netautoberfest:01",
+    "image": "ghcr.io/floehden/netautoberfest:0.1",
     "features": {
          "ghcr.io/devcontainers/features/docker-in-docker:2": {
             "version": "26.1.5",
@@ -16,9 +9,6 @@
         // Add sshd to support gh cli codespace cp.
         "ghcr.io/devcontainers/features/sshd:1": {
             "version": "latest"
-        },
-        "ghcr.io/devcontainers/features/go:1": {
-            "version": "1.22"
         }
     },
     "remoteUser": "vscode",
@@ -34,27 +24,14 @@
                 "terminal.integrated.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, Cascadia Code, Consolas, Courier New, monospace"
             },
             "extensions": [
-                // go
-                "golang.go",
-                "mhutchie.git-graph",
-                "ms-azuretools.vscode-docker",
                 // Python.
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                // Errors and highlighters.
-                "mechatroner.rainbow-csv",
-                "redhat.vscode-yaml",
-                "jinliming2.vscode-go-template",
-                // markdown
-                "yzhang.markdown-all-in-one",
-                "davidanson.vscode-markdownlint",
-                // proto
-                "zxh404.vscode-proto3",
                 // containerlab
                 "srl-labs.vscode-containerlab"
             ]
         }
     },
-    "postCreateCommand": "bash /.devcontainer/postCreate.sh",
+    "postCreateCommand": "bash /root/postCreate.sh",
     "workspaceFolder": "/home/vscode"
 }

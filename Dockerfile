@@ -68,10 +68,8 @@ COPY ./.devcontainer/install.sh /tmp/install.sh
 RUN ["chmod", "+x", "/tmp/install.sh"]
 RUN /tmp/install.sh && rm /tmp/install.sh
 
+COPY ./.devcontainer/postCreate.sh /root/postCreate.sh
+RUN ["chmod", "+x", "/root/postCreate.sh"]
+
 USER vscode
 WORKDIR /home/vscode
-# COPY ./.devcontainer/.zshrc /home/vscode/.zshrc
-# COPY ./.devcontainer/.p10k.zsh /home/vscode/.p10k.zsh
-# COPY ./.devcontainer/install-zsh-plugins.sh /tmp/install-zsh-plugins.sh
-# COPY ./.devcontainer/install-tools-completions.sh /tmp/install-tools-completions.sh
-# RUN bash -c "/tmp/install-zsh-plugins.sh && /tmp/install-tools-completions.sh"

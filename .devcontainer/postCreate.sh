@@ -10,5 +10,5 @@ terraform -version
 aws --version
 docker --version
 docker compose version
-ansible --version
+sudo ansible --version
 echo "✅ devcontainer setup complete and verified!"
