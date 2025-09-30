@@ -1,6 +1,6 @@
 {
     "name": "NetAutoberfest",
-    "image": "ghcr.io/floehden/netautoberfest:0.1",
+    "image": "ghcr.io/floehden/netautoberfest:0.1-withcJunos",
     "features": {
          "ghcr.io/devcontainers/features/docker-in-docker:2": {
             "version": "26.1.5",
