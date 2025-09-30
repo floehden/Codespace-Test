@@ -53,6 +53,7 @@ USER vscode
 COPY ./.devcontainer/dclab /usr/local/bin/dclab
 
 COPY ./cEOS64-lab-4.34.2.1F.tar.xz /home/vscode
+COPY ./cJunosEvolved-25.2R1.8-EVO.tar.gz /home/vscode
 
 # Create SSH key for vscode user to enable passwordless SSH to devices
 RUN ssh-keygen -t ecdsa -b 256 -N "" -f ~/.ssh/id_ecdsa
