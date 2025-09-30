@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 mcr.microsoft.com/devcontainers/python:3.11-bookworm 
+FROM mcr.microsoft.com/devcontainers/python:3.11-bookworm 
 
 ARG CLAB_VERSION=0.70.2
 
